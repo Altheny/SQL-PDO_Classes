@@ -17,8 +17,8 @@ grant all on db_name.* to 'username'@'localhost' identified by 'pass';
 id int NOT NULL AUTO_INCREMENT,      
 var1 varchar(255) NOT NULL,     
 var2 varchar(255),  
-var3 (255),  
-var4 (255),  
+var3 varchar(255),  
+var4 varchar(255),  
 PRIMARY KEY (id)  
 )
 
