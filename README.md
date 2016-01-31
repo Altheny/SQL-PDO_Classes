@@ -2,7 +2,8 @@
 Object-oriented class complete, with Logging class. 
 
 
-<h2>Test database create </h2>
+<h2>Test database create </h2>   
+  
 1. In Database SQL:  
 create database db_name;  
 create user username;  
