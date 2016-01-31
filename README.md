@@ -12,7 +12,7 @@ grant all on db_name.* to 'username'@'localhost' identified by 'pass';
 
 **2. In db_name SQL:**    
 
->CREATE TABLE table_name  
+>CREATE TABLE table_name character set utf8 
 (  
 id int NOT NULL AUTO_INCREMENT,      
 var1 varchar(255) NOT NULL,     
