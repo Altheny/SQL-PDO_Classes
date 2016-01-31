@@ -12,7 +12,7 @@ grant all on db_name.* to 'username'@'localhost' identified by 'pass';
 
 **2. In db_name SQL:**    
 
->CREATE TABLE table_name character set utf8 
+>CREATE TABLE table_name  
 (  
 id int NOT NULL AUTO_INCREMENT,      
 var1 varchar(255) NOT NULL,     
@@ -20,7 +20,7 @@ var2 varchar(255),
 var3 varchar(255),  
 var4 varchar(255),  
 PRIMARY KEY (id)  
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
