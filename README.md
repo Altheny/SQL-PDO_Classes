@@ -3,13 +3,12 @@ Object-oriented class complete, with Logging class.
 
 
 <h2>Test database create </h2>
-1. In Database SQL:
-create database db_name; <br />
-create user username; <br />
-grant all on db_name.* to 'username'@'localhost' identified by 'pass';
+1. In Database SQL:  
+create database db_name;  
+create user username;  
+grant all on db_name.* to 'username'@'localhost' identified by 'pass';  
 
-2. In db_name SQL:
-
+2. In db_name SQL:  
 
 CREATE TABLE table_name  
 (  
