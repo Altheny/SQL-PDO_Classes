@@ -1,10 +1,10 @@
 <?php
 class DB extends PDO
 {
-    static public $db = null;
-    public static $_instance;
+    private static $db = null;
+    private static $_instance;
 
-    public function __construct($file = 'settings.ini')
+    public function __construct($file = '../core/settings.ini')
     {
         if(!$settings = parse_ini_file($file, TRUE)) {
             throw new exception('Unable to open ' . $file . '.');
@@ -13,7 +13,7 @@ class DB extends PDO
         $dns = $settings['database']['driver'] .
             ':host=' . $settings['database']['host'] .
             ((!empty($settings['database']['port'])) ? (';port=' . $settings['database']['port']) : '') .
-            ';dbname=' . $settings['database']['name'];
+            ';dbname=' . $settings['database']['db_name'];
 
         try {
             parent::__construct($dns, $settings['database']['username'], $settings['database']['password']);
@@ -25,26 +25,17 @@ class DB extends PDO
                 parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
             }
 
-
             self::$db = $this;
         }
             catch(PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();;
         }
 
-
-
-
         self::$db = $this;
     }
 
-
-
-
     /**
-     *
-     * Singleton
-     *
+     * getInstance
      */
     protected static function getInstance ($file = NULL) {
         if (!isset(self::$_instance)) {
@@ -56,9 +47,8 @@ class DB extends PDO
 
 }
 
+/* Test DB*/
 
-
-
-
-$ala = new DB();
-var_dump($ala);
+include_once '../class/Logging.php';
+$zmienna = new DB();
+var_dump($zmienna);
