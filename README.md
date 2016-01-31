@@ -10,7 +10,7 @@ grant all on db_name.* to 'username'@'localhost' identified by 'pass';
 
 2. In db_name SQL:
 
-<code>
+
 CREATE TABLE table_name
 (
 id int NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ var3 (255),
 var4 (255),
 PRIMARY KEY (id)
 )
-</code>
+
 
 
 
