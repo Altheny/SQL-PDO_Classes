@@ -3,15 +3,9 @@ Object-oriented class complete, with Logging class.
 
 
 <h2>Test database create </h2>
-<<<<<<< HEAD
 1. In Database SQL:
 create database db_name; \n
 create user username; \n
-=======
-
-create database db_name; <br />
-create user username; <br />
->>>>>>> origin/master
 grant all on db_name.* to 'username'@'localhost' identified by 'pass';
 
 2. In db_name SQL:
@@ -29,3 +23,4 @@ PRIMARY KEY (id)
 
 
 
+ 
