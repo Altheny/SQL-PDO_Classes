@@ -2,11 +2,11 @@
 Object-oriented class complete, with Logging class. 
 
   
-##Test database create  
+###Test database create  
   
 **1. In Database SQL:**
    
-create database db_name;  
+>create database db_name;  
 create user username;  
 grant all on db_name.* to 'username'@'localhost' identified by 'pass';  
 
