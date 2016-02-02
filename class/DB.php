@@ -1,11 +1,13 @@
 <?php
 class DB extends PDO
 {
-    private static $db = null;
-    private static $_instance;
+    protected static $db = null;
+    protected static $_instance;
 
     public function __construct($file = '../core/settings.ini')
     {
+//        $file = self::getInstance($file);
+
         if(!$settings = parse_ini_file($file, TRUE)) {
             throw new exception('Unable to open ' . $file . '.');
         };
@@ -45,10 +47,14 @@ class DB extends PDO
         return self::$_instance;
     }
 
+
+
 }
 
-/* Test DB*/
+/* Test insert*/
 
-include_once '../class/Logging.php';
-$zmienna = new DB();
-var_dump($zmienna);
+//include_once '../class/Logging.php';
+//$zmienna = new DB();
+//var_dump($zmienna);
+
+/* Test insert end*/
