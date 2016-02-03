@@ -1,7 +1,7 @@
 <?php
 
-include_once'DB.php';
-include_once 'Logging.php';
+//include_once'DB.php';
+//include_once 'Logging.php';
 
 
 class InsertDB extends DB

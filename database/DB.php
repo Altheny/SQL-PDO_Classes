@@ -1,24 +1,25 @@
 <?php
+
+/*
+ *  Main Class Database.
+ */
 class DB extends PDO
 {
     protected static $db = null;
     protected static $_instance;
 
-    public function __construct($file = '../core/settings.ini')
+    public function __construct()
     {
-//        $file = self::getInstance($file);
 
-        if(!$settings = parse_ini_file($file, TRUE)) {
-            throw new exception('Unable to open ' . $file . '.');
-        };
+       $settings = Settings::get('database');
 
-        $dns = $settings['database']['driver'] .
-            ':host=' . $settings['database']['host'] .
-            ((!empty($settings['database']['port'])) ? (';port=' . $settings['database']['port']) : '') .
-            ';dbname=' . $settings['database']['db_name'];
+        $dns = $settings['driver'] .
+            ':host=' . $settings['host'] .
+            ((!empty($settings['port'])) ? (';port=' . $settings['port']) : '') .
+            ';dbname=' . $settings['db_name'];
 
         try {
-            parent::__construct($dns, $settings['database']['username'], $settings['database']['password']);
+            parent::__construct($dns, $settings['username'], $settings['password']);
             parent::setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             // error reporting (only show errors on localhost)
             if( $_SERVER['SERVER_ADDR'] === '127.0.0.1') {
@@ -47,14 +48,5 @@ class DB extends PDO
         return self::$_instance;
     }
 
-
-
 }
 
-/* Test insert*/
-
-//include_once '../class/Logging.php';
-//$zmienna = new DB();
-//var_dump($zmienna);
-
-/* Test insert end*/
