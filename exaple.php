@@ -3,7 +3,7 @@
 include_once'core/Settings.php';
 Settings::getInstance();
 
-/* Test Insert*/
+/************************ Test Insert **********************************/
 
 //$zmienna = new insertDB();
 //
@@ -23,24 +23,42 @@ Settings::getInstance();
 
 
 
-/* Test Select*/
+/***************************** Test Select ***************************/
 
-$ala = new selectDB();
-$select = array('var1', 'var4');
+//$ala = new selectDB();
+//$select = array('var1', 'var4');
+//
+//$tabela = array(
+//    $where = 'WHERE id = :id',
+//    $param = array(
+//        ':id' => 1
+//    )
+//);
+//
+//
+//$result = $ala->select('table_name', $select, $tabela );
+////var_dump($result);
+//foreach ($result as $val ) {
+//
+//  var_dump($val);
+//}
 
+/* Test Select End*/
+
+/******************** Test Update ******************************/
+
+$data = array(
+    'var1' => 'cos zza',
+    'var3' => 'zza'
+);
 $tabela = array(
     $where = 'WHERE id = :id',
     $param = array(
-        ':id' => 1
+        ':id' => 5
     )
 );
 
-
-$result = $ala->select('table_name', $select, $tabela );
-//var_dump($result);
-foreach ($result as $val ) {
-
-  var_dump($val);
-}
-
-/* Test Select End*/
+$baza = new updateDB();
+$baza->update('table_name', $data, $tabela);
+//echo $wynik;
+/* TEst Update End*/

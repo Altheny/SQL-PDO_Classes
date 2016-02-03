@@ -8,7 +8,7 @@ class InsertDB extends DB
 {
 
 
-    /*
+ /*
  * Insert
  */
     public function insert ($table_name, array $data, $lastId = false) {

@@ -6,7 +6,7 @@
 class selectDB extends DB
 {
 //    public function select($TABLE, $COLUMNS = Array("*"), $WHERE = Array(), $LOGIC_OPER = "=", $OPER = "AND" ){
-    public function select($from, $select = Array("*"), $where = array() ){
+    public function select($from, $select = array("*"), $where = array() ){
 
         $sel='';
         $wh = '';
