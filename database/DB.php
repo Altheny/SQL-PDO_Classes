@@ -48,5 +48,57 @@ class DB extends PDO
         return self::$_instance;
     }
 
+
+    /*
+     *  Select
+     *  Metoda powtarzalna
+     */
+    protected function sel($select){
+        $sel='';
+        if(count($select) == 1) {
+            $sel .= $select[0];
+        } else {
+            foreach($select as $column) {
+                $sel .= $column.",";
+            }
+        }
+        $sel = rtrim($sel, ',');
+
+        return $sel;
+    }
+
+
+
+
+    /*
+     *  Where Id
+     *  Metoda powtarzalna
+     */
+      protected function whereId($where){
+          $id = '';
+          $name_id = '';
+          $wynik = '';
+          $value_id = array();
+
+          foreach ($where as $key => $value ) {
+              $name_id = $key;
+              $value_id = $value;
+          }
+
+          if(is_array($value_id)){
+              foreach ($value_id as $val ) {
+                  $wynik .= (int)$val . ',';
+              }
+
+//          $wynik = substr($wynik,0,strlen($wynik)-1);
+              $wynik = rtrim($wynik, ',');
+
+              $id .= "`".$name_id."` IN (" . $wynik . ")" ;
+
+          } else {
+              $id .= "`".$name_id."` = " . (int)$value_id ;
+          }
+            return $id;
+      }
 }
 

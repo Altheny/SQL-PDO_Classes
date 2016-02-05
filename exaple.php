@@ -7,7 +7,6 @@ Settings::getInstance();
 
 //$zmienna = new insertDB();
 //
-//var_dump($zmienna);
 //
 //$test1 = array(
 //    'var1'=> 'wartosc1',
@@ -25,7 +24,7 @@ Settings::getInstance();
 
 /***************************** Test Select ***************************/
 
-//$ala = new selectDB();
+//$zmienna = new selectDB();
 //$select = array('var1', 'var4');
 //
 //$tabela = array(
@@ -36,7 +35,7 @@ Settings::getInstance();
 //);
 //
 //
-//$result = $ala->select('table_name', $select, $tabela );
+//$result = $zmienna->select('table_name', $select, $tabela );
 ////var_dump($result);
 //foreach ($result as $val ) {
 //
@@ -47,18 +46,77 @@ Settings::getInstance();
 
 /******************** Test Update ******************************/
 
+//$data = array(
+//    'var1' => 'cos zza',
+//    'var3' => 'zza'
+//);
+//$tabela = array(
+//    $where = 'WHERE id = :id',
+//    $param = array(
+//        ':id' => 5
+//    )
+//);
+//
+//$baza = new updateDB();
+//$baza->update('table_name', $data, $tabela);
+
+/* TEst Update End*/
+
+/***************** Delete ******************************/
+//$tabela = array(
+//    $where = 'WHERE id = :id',
+//    $param = array(
+//        ':id' => 8
+//    )
+//);
+//
+//$baza = new deleteDB();
+//$baza->delete('table_name',$tabela);
+
+/*** End ***/
+
+/***************   Examle Delete Id ****************/
+
+//$where = array(
+//    'id' =>  9
+////       'id' => array(12,14)
+//);
+//
+//$baza = new deleteDB();
+//$baza->id('table_name', $where);
+
+/*** End  ***/
+
+/******************** Select Id ************************/
+
+//$select = array('var1', 'var4');
+//$where = array(
+////    'id' =>  15
+//       'id' => array(15,17)
+//);
+//
+//$zmienna = new selectDB();
+//  $wynik =  $zmienna->id('table_name',$select, $where);
+//
+//var_dump($wynik);
+
+/*** End ***/
+
+/**************** Update id ******************/
+
 $data = array(
-    'var1' => 'cos zza',
-    'var3' => 'zza'
+    'var1' => 'av1',
+    'var3' => 'av2',
+    'var4' => 'av4'
 );
-$tabela = array(
-    $where = 'WHERE id = :id',
-    $param = array(
-        ':id' => 5
-    )
+
+$where = array(
+    'id' =>  19
+//       'id' => array(15,17)
 );
 
 $baza = new updateDB();
-$baza->update('table_name', $data, $tabela);
-//echo $wynik;
-/* TEst Update End*/
+$baza->id('table_name', $data, $where);
+
+
+/***   ***/
