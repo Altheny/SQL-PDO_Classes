@@ -5,8 +5,7 @@ Object-oriented class complete, with Logging class.
 ###Test database create  
   
 **1. In Database SQL:**
-<pre>   
-create database db_name;  
+<pre>create database db_name;  
 create user username;  
 grant all on db_name.* to 'username'@'localhost' identified by 'pass';  
 </pre>
